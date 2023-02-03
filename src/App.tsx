@@ -1,12 +1,19 @@
 import React, {useState} from 'react';
 import './App.css';
+import {NewComponent} from "./05-filter/NewComponent";
 
-type FilterType = 'All' | 'Dollars' | 'Rubls'
+export type FilterType = 'All' | 'Dollars' | 'Rubls'
+
+export type currency = {
+    banknots: string,
+    nominal: number,
+    number: string
+}
 
 
 function App():JSX.Element {
 
-    const [money, setMoney] = useState([
+    const [money, setMoney] = useState<Array<currency>>([
         {banknots: 'Dollars', nominal: 100, number: ' a1234567890'},
         {banknots: 'Dollars', nominal: 50, number: ' z1234567890'},
         {banknots: 'Rubls', nominal: 100, number: ' w1234567890'},
@@ -34,7 +41,8 @@ function App():JSX.Element {
 
     return (
         <div>
-            <ul>
+            <NewComponent currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}  />
+{/*            <ul>
                 {currentMoney.map((objFromMoneyFrr, index) => {
                     return (
                         <li key={index}>
@@ -49,7 +57,7 @@ function App():JSX.Element {
                 <button onClick={() => onClickFilterHandler('All')}>All</button>
                 <button onClick={() => onClickFilterHandler('Rubls')}>Rubls</button>
                 <button onClick={() => onClickFilterHandler('Dollars')}>Dollars</button>
-            </div>
+            </div>*/}
         </div>
     );
 }
