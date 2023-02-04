@@ -1,25 +1,17 @@
 import React from 'react';
 import './App.css';
-import {Button} from "./03-02-button/components/Button";
+import {Button} from "./03-03-button/components/Button";
 
 function App(): JSX.Element {
 
-    const Button1Fun = (logInfo: string, logInfo2: number) => {
-        console.log(logInfo, logInfo2)
-    }
-    const Button2Fun = (logInfo: string) => {
-        console.log(logInfo)
-    }
-
-    const Button3Fun = (logInfo: string) => {
-        console.log(logInfo)
+    const funToLog = (props1: string, props2: number) => {
+        console.log(props1, props2)
     }
 
     return (
         <div className={'App'}>
-            <Button name={'Button 1'} callBack={() => Button1Fun('logInfo 1', 20)}/>
-            <Button name={'Button 2'} callBack={() => Button2Fun('logInfo 2')}/>
-            <Button name={'Button 2'} callBack={() => Button2Fun('logInfo 2')}/>
+            <Button title={'Button'} callback={() => funToLog('Some text to log', 50)}/>
+            <Button title={'Button 2'} callback={() => funToLog('New text to log', 500)}/>
         </div>
     );
 }
