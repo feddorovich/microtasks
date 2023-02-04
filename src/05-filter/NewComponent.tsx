@@ -1,5 +1,5 @@
 import React from "react";
-import {currency, FilterType} from "../App";
+import {currency, FilterType} from "./App";
 
 
 type NewComponentProps = {
