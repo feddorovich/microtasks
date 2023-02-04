@@ -14,11 +14,8 @@ function App(): JSX.Element {
         {banknots: 'ruble', nomital: 50, number: ' v1234567890'},
     ])
 
-
     return (
-        <div>
-
-        </div>
+        <div></div>
     );
 }
 
