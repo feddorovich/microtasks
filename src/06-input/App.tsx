@@ -1,17 +1,16 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App() {
-    const [message, setMessage] = useState([
-            {message: 'message1'},
-            {message: 'message2'},
-            {message: 'message3'},
-            {message: 'message4'},
-            {message: 'message5'}
-        ]
-    )
+function App(): JSX.Element {
+
+    let [message, setMessage] = useState([
+        {message: 'message1'},
+        {message: 'message2'},
+        {message: 'message3'}
+    ])
+
     return (
-        <div className="App">
+        <div className={'App'}>
             <div>
                 <input/>
                 <button>+</button>
