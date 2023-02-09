@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import {FullInput} from "./06-input/components/FullInput";
-import {Input} from "./06-input/components/Input";
-import {Button} from "./06-input/components/Button";
+import {FullInput} from "./00-training/05-01-input/components/FullInput";
+import {Input} from "./00-training/05-01-input/components/Input";
+import {Button} from "./00-training/05-01-input/components/Button";
 
 function App(): JSX.Element {
 
@@ -15,10 +15,10 @@ function App(): JSX.Element {
     let [title, setTitle] = useState('')
     console.log(title)
 
-
     const addMessage = (title: string) => {
-        let newMessage = {message: title}
-        setMessage([newMessage, ...message])
+        console.log(title)
+        let NewMessage = {message: title}
+        setMessage([NewMessage, ...message])
     }
 
     const callBackButtonHundler = () => {
@@ -28,7 +28,7 @@ function App(): JSX.Element {
 
     return (
         <div className={'App'}>
-            {/*<FullInput addMessage={addMessage}/>*/}
+{/*            <FullInput addMessage={addMessage}/>*/}
 
             <Input title={title} setTitle={setTitle}/>
             <Button name={'+'} callBack={()=>{callBackButtonHundler()}}/>
