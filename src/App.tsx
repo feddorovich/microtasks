@@ -10,9 +10,14 @@ function App(): JSX.Element {
         {message: 'message3'}
     ])
 
+    const addMessage = (title: string) => {
+        let object = {message: title}
+        setMessage([object, ...message])
+    }
+
     return (
         <div className={'App'}>
-            <FullInput />
+            <FullInput addMessage={addMessage}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
