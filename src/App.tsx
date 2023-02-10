@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './App.css';
-import {FullInput} from "./00-training/05-02-input/FullInput";
 
 function App(): JSX.Element {
 
@@ -10,14 +9,12 @@ function App(): JSX.Element {
         {message: 'message3'}
     ])
 
-    const addMessage = (title: string) => {
-        let object = {message: title}
-        setMessage([object, ...message])
-    }
-
     return (
         <div className={'App'}>
-            <FullInput addMessage={addMessage}/>
+            <div>
+                <input/>
+                <button>+</button>
+            </div>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
