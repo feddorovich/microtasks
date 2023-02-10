@@ -9,17 +9,16 @@ export const FullInput = (props: FullInputPropsType) => {
     let [title, setTitle] = useState('')
 
     const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setTitle(event.target.value)
+        setTitle(event.currentTarget.value)
     }
 
     const onClickButtonHandler = () => {
         props.addMessage(title)
-        setTitle('')
     }
 
     return (
         <div>
-            <input value={title} onChange={onChangeInputHandler}/>
+            <input onChange={onChangeInputHandler}/>
             <button onClick={onClickButtonHandler}>+</button>
         </div>
     );

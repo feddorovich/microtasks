@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {FullInput} from "./00-training/05-03-input/FullInput";
-import {Button} from "./00-training/05-03-input/components/Button";
-import {Input} from "./00-training/05-03-input/components/Input";
+import {FullInput} from "./00-training/05-04-input/FullInput";
 
 function App(): JSX.Element {
 
@@ -12,23 +10,15 @@ function App(): JSX.Element {
         {message: 'message3'}
     ])
 
-    let [title, setTitle] = useState('')
-
     const addMessage = (title: string) => {
+        console.log(title)
         let objectMessage = {message: title}
         setMessage([objectMessage, ...message])
     }
 
-    const callBackButtonHandler = () => {
-        addMessage(title)
-        setTitle('')
-    }
-
     return (
         <div className={'App'}>
-            <Input title={title} setTitle={setTitle}/>
-            <Button name={'+'} callBack={callBackButtonHandler}/>
-            {/*<FullInput addMessage={addMessage}/>*/}
+            <FullInput addMessage={addMessage}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
