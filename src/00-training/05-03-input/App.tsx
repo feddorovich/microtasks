@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import {FullInput} from "./00-training/05-03-input/FullInput";
-import {Button} from "./00-training/05-03-input/components/Button";
-import {Input} from "./00-training/05-03-input/components/Input";
+import {FullInput} from "./FullInput";
+import {Button} from "./components/Button";
+import {Input} from "./components/Input";
 
 function App(): JSX.Element {
 
